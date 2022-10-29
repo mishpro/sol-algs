@@ -13,7 +13,6 @@ if __name__ == '__main__':
     x = []
 
     for i in range(N):
-        id, name, score = input().split()
-        x.append(tuple(-score, id, name))
+        num, name, score = input().split()
+        x.append((-(int(score)), int(num), str(name)))
 
-    print(x)
