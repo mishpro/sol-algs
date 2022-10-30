@@ -16,3 +16,9 @@ if __name__ == '__main__':
         num, name, score = input().split()
         x.append((-(int(score)), int(num), str(name)))
 
+    selection_sort(x)
+
+    for t in x[:4]:
+
+
+    print(t[1] for t in x)
