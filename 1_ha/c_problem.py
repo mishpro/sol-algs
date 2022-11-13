@@ -19,12 +19,19 @@ def partition(x, l, r, pivot):
     i = l
     while i < r:
         if x[i] == pivot:
-
-            #     добавить в часть pivot
+            x[ir], x[i] = x[i], x[ir]  # swap: found pivot element and first p> element
+            ir += 1
         if x[i] < pivot:
-            #     добавить в часть < pivot
+            x[il], x[i] = x[i], x[il]  # swap: found p< element and first pivot element
+            if il < ir:
+                x[ir], x[i] = x[i], x[ir]  # swap: if pivot area is not empty we need to return pivot element
+                # from previous 'if' in desired place (like in if x[i] == pivot:)
+            ir += 1  # change pivot area borders
+            il += 1
         i += 1
     pass
+
+    return il, ir
 
 
 def qsort(x, l=0, r=None):
