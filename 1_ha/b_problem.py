@@ -13,12 +13,12 @@ if __name__ == '__main__':
     x = []
 
     for i in range(N):
-        num, name, score = input().split()
-        x.append((-(int(score)), int(num), str(name)))
+        num, score, name = input().split()
+        x.append((-(int(score)), int(num), str(name))) # add '-' score to reverse selection_sort order (from increase to decrease),
+                                                       # if scores of elements are equal then 'num' will be sorted in increse order (like in task statement)
 
     selection_sort(x)
 
-    for t in x[:4]:
-
-
-    print(t[1] for t in x)
+    for name in x[:3]:
+        print(name[2])
+    print(*list(num[1] for num in x), sep=' ') # Q: what is *? (splat operator)
